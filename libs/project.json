@@ -1,0 +1,75 @@
+{
+  "name": "libs",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/src",
+  "prefix": "my-monorepo",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ng-package.json",
+        "tailwindConfig": "libs/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/.storybook",
+        "browserTarget": "libs:build-storybook",
+        "compodoc": false,
+        "styles": ["libs/styles/main.scss"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/libs",
+        "configDir": "libs/.storybook",
+        "browserTarget": "libs:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "libs:build-storybook",
+        "staticFilePath": "dist/storybook/libs"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "libs:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

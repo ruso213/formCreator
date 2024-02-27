@@ -1,0 +1,13 @@
+[debug] [2024-02-22T02:23:32.829Z] ----------------------------------------------------------------------
+[debug] [2024-02-22T02:23:32.830Z] Command:       /Users/rodrigoibarra/.nvm/versions/node/v20.5.0/bin/node /Users/rodrigoibarra/.nvm/versions/node/v20.5.0/bin/firebase login
+[debug] [2024-02-22T02:23:32.830Z] CLI Version:   12.8.1
+[debug] [2024-02-22T02:23:32.830Z] Platform:      darwin
+[debug] [2024-02-22T02:23:32.830Z] Node Version:  v20.5.0
+[debug] [2024-02-22T02:23:32.830Z] Time:          Wed Feb 21 2024 19:23:32 GMT-0700 (Mexican Pacific Standard Time)
+[debug] [2024-02-22T02:23:32.830Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-22T02:23:32.831Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2024-02-22T02:23:33.167Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-02-22T02:23:33.168Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}

@@ -1,0 +1,19 @@
+<div  class="w-96 h-96 bg-white shadow-md rounded-lg flex justify-between p-10 flex-col">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <div class="flex justify-center">
+        <h1 class="text-xl">Welcome again 👋</h1>
+        <i class="fa-solid fa-handshake-simple"></i>
+    </div>
+    <div class="flex flex-col gap-4">
+        <button class="h-10 flex justify-center items-center gap-3 bg-[#aa0100] py-2 rounded-md shadow-md text-white hover:bg-[#9C0014]" type="button" (click)="login()">
+        <p>Sign in with</p>
+        <img class="h-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/800px-Google_%22G%22_logo.svg.png" alt="">
+        </button>
+        <button class="bg-[#0077aa] py-2 rounded-md shadow-md text-white hover:bg-[#0062AD]" type="button" (click)="getAuth()">fn getAuth()</button>
+        <button class="bg-gray-800 py-2 rounded-md shadow-md text-white hover:bg-gray-950" type="button" (click)="logout()">fn logOut()</button>
+    </div>
+    <div class="flex ">
+        <p>Do you haven´t account?</p>
+        <p class="underline text-cyan-500 hover:text-cyan-700 cursor-pointer" (click)="register()">Please click here</p>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+
+.box{
+    width: 226px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid ;
+    border-radius: 4px;
+    padding: 10px 12px;
+    position: relative;
+    background: #fafafa;
+    transition: .3s;
+    position: relative;
+    .boxInput{
+        outline: none;
+        border: none;
+        background: none;
+        z-index: 100;
+    }
+    .boxLabel{
+        position: absolute;
+        z-index: 10;
+    }
+
+    &.initial{ 
+        color: #A3A3A3;
+        .initialLabel{
+            left: 11px;
+            top: 7px;
+        }
+        i{
+            position: relative;
+            right: 10px;
+        }
+        
+    }
+
+    &.focus{
+        transition-duration: .2s;
+        border: 1px solid#00C041;
+        position: relative;
+        background: #00c0401c;
+        .focusLabel{
+            position: absolute;
+            font-size: 12px;
+            top: 4px;
+            animation-name: focusLabel;
+            animation-duration: .2s;
+        }
+        .focusInput{
+            position: relative;
+            color: #00C041;
+            top: 6px;
+            font-size: 14px;
+        }
+       
+    }
+
+    &.filled{
+        transition-duration: .2s;
+        border: 1px solid black;
+        position: relative;
+        .filledLabel{
+            position: absolute;
+            font-size: 12px;
+            top: 4px;
+            animation-name: focusLabel;
+            animation-duration: .2s;
+        }
+        .filledInput{
+            position: relative;
+            color: black;
+            top: 6px;
+            font-size: 14px;
+        }
+    }
+    &.error{
+        transition-duration: .2s;
+        border: 1px solid red;
+        .errorLabel{
+            position: absolute;
+            font-size: 12px;
+            top: 4px;
+            animation-name: focusLabel;
+            animation-duration: .2s;
+        }
+        .errorInput{
+            position: relative;
+            color: black;
+            top: 6px;
+            font-size: 14px;
+        }
+        
+        
+        i{
+            position: relative;
+            right: 10px;
+        }
+    }
+}
+
+
+@keyframes focusLabel {
+    0%{
+        top: auto;
+        font-size: 15px;
+    }
+    100%{
+        font-size: 12px;
+        top: 4px;
+    }
+}
+
+
+

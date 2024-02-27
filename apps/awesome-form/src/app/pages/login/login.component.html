@@ -1,0 +1,13 @@
+<div class=" min-h-[100vh] w-[100vw] flex flex-col gap-4 items-center justify-center bg-[#e1eefd]">
+    <my-monorepo-target-login ></my-monorepo-target-login>
+    
+    <my-monorepo-input-states >Gmaiasasdl</my-monorepo-input-states>
+    <my-monorepo-input-states [(ngModel)]="a" >Gmail with ngmodel</my-monorepo-input-states>
+    <form [formGroup]="formGroup">
+        <my-monorepo-input-states formControlName="name">gmail with reactiveForm</my-monorepo-input-states>
+    </form>
+    <div class="m-5 flex flex-col gap-4">
+        <button (click)="submitForm()" class="px-4 py-2 rounded-md shadow-md bg-lime-700 hover:bg-lime-800">submitForm</button>
+        <button (click)="submitNgModel()" class="px-4 py-2 rounded-md shadow-md bg-lime-700 hover:bg-lime-800">submitNgModel</button>
+    </div>
+</div>
